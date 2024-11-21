@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>pi?!!!!?!?!!</h2>
+
+<script>
+  var a=2
+  var pi=3
+</script>
+
+<text>output:</text>
+<p id=demo>the ultimate nilakantha series calculator. because its online</p>
+<text>iterations:</text>
+<p id=a>
+    <pre>
+        _____________________
+        =====================
+          ||             ||
+          ||             ||
+          ||             ||
+          ||             ||
+          ||              \\
+    </pre>
+<p>
+
+<button type="button" onclick='
+for (i=0; i<1; i++) {
+  pi += 4/((a)*(a+1)*(a+2)) - 4/((a+2)*(a+3)*(a+4));
+  a += 4;
+  document.getElementById("demo").innerHTML = pi;
+  document.getElementById("a").innerHTML = (a-2)/4;
+}'>
+calculate 1 iteration
+</button>
+
+<button type="button" onclick='
+for (i=0; i<100; i++) {
+  pi += 4/((a)*(a+1)*(a+2)) - 4/((a+2)*(a+3)*(a+4));
+  a += 4;
+  document.getElementById("demo").innerHTML = pi;
+  document.getElementById("a").innerHTML = (a-2)/4;
+}'>
+calculate 100 iterations
+</button>
+
+</body>
+</html>
