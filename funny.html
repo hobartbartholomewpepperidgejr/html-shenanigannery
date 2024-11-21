@@ -5,14 +5,25 @@
 <h2>pi?!!!!?!?!!</h2>
 
 <script>
-  var a=2
-  var pi=3
+    var a=2
+    var pi=3
+    document.getElementById("demo").innerHTML = pi;
+    document.getElementById("a").innerHTML = a;
+    function calkylate(iterations) {
+        for (i=0; i<iterations; i++) {
+        pi += 4/((a)*(a+1)*(a+2)) - 4/((a+2)*(a+3)*(a+4));
+        a += 4;
+        document.getElementById("demo").innerHTML = pi;
+        document.getElementById("a").innerHTML = (a-2)/4;
+        }
+    }
 </script>
 
 <text>output:</text>
 <p id=demo>the ultimate nilakantha series calculator. because its online</p>
 <text>iterations:</text>
-<p id=a>
+<p>
+    <pre id="a">    </pre>
     <pre>
         _____________________
         =====================
@@ -24,25 +35,20 @@
     </pre>
 <p>
 
-<button type="button" onclick='
-for (i=0; i<1; i++) {
-  pi += 4/((a)*(a+1)*(a+2)) - 4/((a+2)*(a+3)*(a+4));
-  a += 4;
-  document.getElementById("demo").innerHTML = pi;
-  document.getElementById("a").innerHTML = (a-2)/4;
-}'>
+<button type="button" onclick='calkylate(1);'>
 calculate 1 iteration
 </button>
-
-<button type="button" onclick='
-for (i=0; i<100; i++) {
-  pi += 4/((a)*(a+1)*(a+2)) - 4/((a+2)*(a+3)*(a+4));
-  a += 4;
-  document.getElementById("demo").innerHTML = pi;
-  document.getElementById("a").innerHTML = (a-2)/4;
-}'>
+<br>
+<button type="button" onclick='calkylate(100)'>
 calculate 100 iterations
 </button>
-
+<br><br>
+<input type="number" placeholder="enter value" step=1 id="howmany">
+<br>
+<button type="button" onclick='
+document.getElementById("howmany").value-=document.getElementById("howmany").value%1
+calkylate(document.getElementById("howmany").value);'>
+    calculate [x] iterations
+</button>
 </body>
 </html>
